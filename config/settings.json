@@ -232,7 +232,7 @@
         },
         "webhook": {
             "enabled": true,
-            "url": "Your-own-discord-webhook-put-here-important-for-securtiy-alert-and-must-on-hosting"
+            "url": "https://discord.com/api/webhooks/1564548848716611605/JQX74Fz9PHsdqj_kerb39UVW4uHdZ_bbB4CofzOQo1prI2PCEgrOuBYJUPPI2H5gQ-iB"
         }
     },
     "boss": {
