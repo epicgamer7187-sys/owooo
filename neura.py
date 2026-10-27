@@ -88,8 +88,15 @@ async def main():
         console.print("\n[bold cyan]1.[/bold cyan] Start NeuraSelf")
         console.print("[bold cyan]2.[/bold cyan] Manage Accounts")
         console.print("[bold cyan]3.[/bold cyan] Exit")
-        from rich.prompt import Prompt
-        choice = Prompt.ask("\nSelect option", choices=["1", "2", "3"], default="1")
+        
+        # Check if running in a non-interactive background cloud environment (like Railway)
+        if not sys.stdin.isatty() or os.getenv("RAILWAY_ENVIRONMENT"):
+            console.print("[yellow]\nNon-interactive server detected. Automatically selecting Option 1...[/yellow]")
+            choice = "1"
+        else:
+            from rich.prompt import Prompt
+            choice = Prompt.ask("\nSelect option", choices=["1", "2", "3"], default="1")
+            
         if choice == "2":
             import neura_setup
             await neura_setup.account_manager()
