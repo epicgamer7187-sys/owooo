@@ -1,3 +1,8 @@
-{
-    "accounts": []
-}
+        # Fallback to Environment Variables if json file is empty
+        if not accounts and os.getenv("DISCORD_TOKEN"):
+            accounts = [{
+                "name": "Railway Account",
+                "token": os.getenv("DISCORD_TOKEN"),
+                "channels": [int(ch) for ch in os.getenv("DISCORD_CHANNEL", "").split(",") if ch.strip()],
+                "enabled": true
+            }]
