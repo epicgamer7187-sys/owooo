@@ -2,8 +2,8 @@
   "accounts": [
     {
       "name": "Account 1",
-      "token": os.getenv("DISCORD_TOKEN"),
-      "channels": [int(ch) for ch in os.getenv("DISCORD_CHANNEL", "").split(",") if ch.strip()],
+      "token": "YOUR_DISCORD_TOKEN_HERE",
+      "channels":,
       "enabled": true
     }
   ]
